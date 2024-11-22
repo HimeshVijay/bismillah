@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const PORT = 8000;
 const path = require('path');
-
+  
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
 // Route to serve the certificate file
+app.get('/',(req,res)=>{
+    res.end("hello world");
+});
 app.get('/progress/share/certificate.html', (req, res) => {
     const id = req.query.id;
 
